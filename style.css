@@ -1,0 +1,417 @@
+/* --- VARIABLES Y RESET BÁSICO --- */
+:root {
+    --color-primary: #004d40; /* Verde Oscuro/Institucional */
+    --color-secondary: #c0392b; /* Rojo/Resaltado */
+    --color-accent: #f39c12; /* Dorado/Resalte de Botones */
+    --color-background: #f7f9fc;
+    --color-dark: #2c3e50;
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Montserrat', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--color-dark);
+    background-color: var(--color-background);
+    /* Ya incluido para una "nota extra" (mejor usabilidad) */
+    scroll-behavior: smooth; 
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- ESTILOS DE BOTONES --- */
+.btn-primary, .btn-secondary, .enroll-cta {
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: background-color 0.3s, transform 0.2s;
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-primary {
+    background-color: var(--color-accent);
+    /* Texto blanco para mejor contraste (Nota Extra) */
+    color: white; 
+    border: 2px solid var(--color-accent);
+}
+
+.btn-primary:hover {
+    background-color: #e67e22;
+    transform: translateY(-2px);
+}
+
+.btn-secondary, .enroll-cta {
+    background-color: var(--color-secondary);
+    color: white;
+    border: 2px solid var(--color-secondary);
+    text-align: center;
+    margin-top: 30px;
+}
+
+.btn-secondary:hover, .enroll-cta:hover {
+    background-color: #a93226;
+    transform: scale(1.02);
+}
+
+/* --- ESTILOS GENERALES DE SECCIÓN --- */
+.section-title {
+    font-family: var(--font-heading);
+    font-size: 2.5em;
+    text-align: center;
+    color: var(--color-primary);
+    margin-bottom: 40px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid var(--color-accent);
+    display: inline-block;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* --- 1. BARRA DE NAVEGACIÓN Y LOGO --- */
+.header-nav {
+    background-color: var(--color-primary);
+    color: white;
+    padding: 15px 0;
+    background-image: url('../IMG/foto-decorativa-larga.png'); 
+    background-size: cover;
+    background-position: center bottom;
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* AJUSTE FINAL PARA LOGO MÁS GRANDE */
+.logo {
+    width: 280px; /* Tamaño aumentado */
+    height: 90px; /* Tamaño aumentado */
+    
+    /* RUTA AL LOGO */
+    background-image: url('../IMG/Logo del Colegio.png'); 
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: left center;
+}
+
+.logo .logo-text {
+    text-indent: -9999px;
+    display: block;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 0 15px;
+    font-weight: 400;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--color-accent);
+}
+
+.contact-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Enlace de WhatsApp en el encabezado (Nota Extra) */
+.contact-phone-link {
+    color: white; 
+    text-decoration: none;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.3s;
+}
+
+.contact-phone-link i {
+    color: #25D366; /* Color de WhatsApp */
+    font-size: 1.2em;
+}
+
+.contact-phone-link:hover {
+    color: var(--color-accent);
+}
+
+.contact-info span {
+    display: none; 
+}
+
+
+/* --- 2. SECCIÓN HEROE Y VIDEO --- */
+.hero-section {
+    padding: 60px 0;
+    background: white; 
+    border-bottom: 5px solid var(--color-accent);
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.title-headline {
+    font-size: 3.2em;
+    color: var(--color-secondary);
+    margin-bottom: 15px;
+    font-family: var(--font-heading);
+    line-height: 1.1;
+}
+
+.subtitle {
+    font-size: 1.25em;
+    color: var(--color-dark);
+    margin-bottom: 25px;
+}
+
+.sticker-tag {
+    background-color: var(--color-primary);
+    color: white;
+    padding: 7px 20px;
+    border-radius: 25px;
+    display: inline-block;
+    font-weight: 600;
+    margin-bottom: 35px;
+}
+
+.sticker-tag i {
+    color: var(--color-accent);
+    margin-right: 8px;
+}
+
+/* Pasos/Flujo */
+.steps-flow {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 40px;
+}
+
+.step-item {
+    text-align: center;
+    flex-basis: 30%;
+}
+
+.icon-circle {
+    width: 70px;
+    height: 70px;
+    background-color: var(--color-primary);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 10px;
+    font-size: 1.8em;
+    color: white;
+    border: 4px solid var(--color-accent);
+}
+
+.flow-arrow {
+    color: var(--color-dark);
+    font-size: 1.5em;
+    margin-top: 15px;
+}
+
+/* Bloque de Video */
+.video-block {
+    position: relative;
+    padding-top: 56.25%; /* Relación de aspecto 16:9 */
+    background: var(--color-dark); 
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+}
+
+.video-block .responsive-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.video-caption {
+    text-align: center;
+    font-size: 1em;
+    font-weight: 600;
+    color: var(--color-dark);
+    margin-top: 10px;
+}
+
+/* --- 3. SECCIÓN ¿POR QUÉ ELEGIRNOS? --- */
+.why-us-section {
+    padding: 60px 0;
+    background-color: white;
+    text-align: center;
+}
+
+.why-us-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.reason-card {
+    background: var(--color-background);
+    padding: 25px;
+    border-radius: 10px;
+    border-top: 5px solid var(--color-primary);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s;
+}
+
+.reason-card:hover {
+    transform: translateY(-5px);
+}
+
+.reason-icon {
+    font-size: 2.5em;
+    color: var(--color-accent);
+    margin-bottom: 15px;
+}
+
+.reason-card h3 {
+    font-family: var(--font-heading);
+    color: var(--color-dark);
+    margin-bottom: 10px;
+}
+
+/* --- 4. GALERÍA DE FOTOS --- */
+.gallery-section {
+    padding: 60px 0;
+    background-color: var(--color-background);
+    text-align: center;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.gallery-item {
+    height: 250px;
+    border-radius: 8px;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    cursor: pointer;
+    position: relative; 
+    overflow: hidden; 
+}
+
+/* Efecto Overlay en la Galería (Nota Extra) */
+.gallery-item::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 77, 64, 0.4); 
+    opacity: 0; 
+    transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover::after {
+    opacity: 1; 
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+}
+
+/* --- 5. CONTACTO (Footer) --- */
+.footer-contact {
+    background-color: var(--color-dark);
+    color: white;
+    padding-top: 40px;
+    font-size: 0.95em;
+}
+
+.contact-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 30px;
+}
+
+.contact-details h3, .social-links h3 {
+    font-family: var(--font-heading);
+    color: var(--color-accent);
+    margin-bottom: 15px;
+}
+
+.contact-details p {
+    margin-bottom: 8px;
+}
+
+.contact-details i {
+    color: var(--color-secondary);
+    width: 20px;
+}
+
+.social-links {
+    text-align: right;
+}
+
+.social-icon {
+    color: white;
+    font-size: 1.8em;
+    margin-left: 15px;
+    transition: color 0.3s;
+}
+
+.social-icon:hover {
+    color: var(--color-accent);
+}
+
+/* --- SUGERENCIA ADICIONAL PARA NOTA EXTRA --- */
+/* Sombra sutil en el bloque de contacto (opcional) */
+.contact-details {
+    padding: 10px;
+    border-radius: 5px;
+    transition: box-shadow 0.3s;
+}
+
+.contact-details:hover {
+    box-shadow: 0 0 15px rgba(243, 156, 18, 0.3); /* Sombra suave dorada */
+}
+/* ------------------------------------------- */
+
+.copyright {
+    text-align: center;
+    padding: 15px 0;
+    font-size: 0.8em;
+    background-color: #1f3041; 
+}
